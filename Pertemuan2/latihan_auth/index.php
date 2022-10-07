@@ -3,7 +3,7 @@ session_start();
 
 $database = [
     'username' => 'yukie',
-    'passowrd' => '12345'
+    'password' => '12345'
 ];
 
 if(isset($_POST['submit'])){

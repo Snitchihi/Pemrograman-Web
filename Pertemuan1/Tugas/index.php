@@ -1,19 +1,25 @@
 <?php
-include "header.html";
-include "navigasi.html";
-include "konten.html";
+
+session_start();
+$database = [
+    'username' => 'yukie',
+    'password' => '1'
+];
+
+if(isset($_POST['submit'])){
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    if($username == $database['username'] && $password == $database['password']) {
+        $_SESSION['username'] = $username;
+
+        header("location:admin_page.php");
+    }else {
+        echo '<script> alert("Username atau password salah!");
+        window.location="login_page.php"; </script>';
+    }
+} else{
+    echo'<script> window.location="landing_page.php"; </script>';
+}
+
 ?>
-
-
-<div class="card">
-        <div class="card-body">
-                <p>Copyright ⒸWhale Industry All rights reserved | Created by <a href="https://www.instagram.com/pratamayukie.a/?next=%2F&hl=id"> Someone who love you sincerly</a></p>
-        </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
-        crossorigin="anonymous"></script>
-</body>
-
-</html>
