@@ -21,8 +21,8 @@ $result = mysqli_query($conn_db, $query);
     </head>
 
     <body>
-    
-    <table width="80%" border="1" class="pt-2">
+    <a href="add.php" class="btn btn-secondary mt-2">Tambah</i></a><br><br>
+    <table width="80%" border="1" class="table table-striped">
         <thead>
             <tr>
                 <th>Name</th>
@@ -53,8 +53,8 @@ $result = mysqli_query($conn_db, $query);
                     <?= $customer_data['updated']?>
                 </td>
                 <td>
-                    <a href='edit.php?id=<?=$customer_data["id"]?>'>Edit</a> |
-                    <a href='delete.php?id=<?=$customer_data["id"]?>'>Delete</a>
+                <a href='edit.php?id=<?=$customer_data["id"]?>' class="btn btn-white"><i class="fa-solid fa-pen text-dark"></i></a> |
+                <a href='delete.php?id=<?=$customer_data["id"]?>' class="btn btn-white"><i class="fa-solid fa-minus text-danger"></i></a> 
                 </td>
             </tr>
             <?php endwhile; ?>
@@ -68,13 +68,12 @@ $result = mysqli_query($conn_db, $query);
             <?php mysqli_free_result($result); ?>
         </tbody>
     </table>
-    <a href="add.php"><i class="fa-solid fa-circle-plus fa-2x"></i></a><br><br>
     <?php if(isset($_GET["message"])){
     $message = $_GET["message"];
-    echo "<html type='text/javascript'>alert('$message');";
-    echo "window.location='index.php'</body></html>script>";
+    echo "< type='text/javascript'>alert('$message');";
+    echo "window.location='index.php'</ script>";
 }?>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></>
 
 </body>
 </html>

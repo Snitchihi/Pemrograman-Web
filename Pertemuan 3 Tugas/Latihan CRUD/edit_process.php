@@ -1,5 +1,5 @@
 <?php 
-include_once
+include_once("config.php");
 
 if(isset($_POST['update']))
 {
@@ -11,7 +11,7 @@ if(isset($_POST['update']))
     date_default_timezone_set('Asia/Jakarta');
     $updated=date('Y-m-d H:i:s');
 
-    $result = mysqli_query($conn_db, "UPDATE customers SET name='$name',email='$email',phone='$phone',updated='$updated' WHERE id=$id");
+    $result = mysqli_query($conn_db, "UPDATE customer SET name='$name',email='$email',phone='$phone',updated='$updated' WHERE id=$id");
 
     if($result){
         $message = "Customer " . $name . " berhasil di perbarui";
