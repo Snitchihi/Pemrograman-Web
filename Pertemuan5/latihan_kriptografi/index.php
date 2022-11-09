@@ -20,7 +20,7 @@ if(isset($_POST['submit'])){
         //set session username
         $_SESSION['username'] = $username;
         //redirect/mengarahkan menuju halaman admin
-        header("location:admin_page.php");
+        header("location:admin.php");
     }else {
         //memunculkan pemberitahuan gagal login dan redirect ke login page
         echo '<script> alert("Username atau password salah!");

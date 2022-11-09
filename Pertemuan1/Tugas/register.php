@@ -1,3 +1,12 @@
+<?php
+sesion_start();
+
+if(isset($_SESSION['username'])){
+    header('Location:admin_page.php')
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,7 +48,7 @@
                             <form class="user">
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="exampleFirstName"
+                                        <input type="text" name ="username" class="form-control form-control-user" id="exampleFirstName"
                                             placeholder="First Name">
                                     </div>
                                     <div class="col-sm-6">
